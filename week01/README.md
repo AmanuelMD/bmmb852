@@ -91,7 +91,7 @@ This is a sample file.
 I accessed the same file using an absolute path:
 
 ```bash
-cat /Users/aba6573/edu/bmmb852/week1/data/raw/sample.txt
+cat /Users/aba6573/edu/bmmb852/week01/data/raw/sample.txt
 ```
 
 Output:
