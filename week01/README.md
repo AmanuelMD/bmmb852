@@ -1,4 +1,4 @@
-# BMMB 852 - Week 1 Assignment
+# BMMB 852 - Week 01 Assignment
 
 ## AI-Ready Code Editor
 
