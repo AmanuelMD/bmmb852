@@ -23,4 +23,6 @@ $(FAI): $(FASTA)
 clean:
 	rm -f $(FASTA) $(GFF) $(FAI)
 
+.DELETE_ON_ERROR:
+
 .PHONY: all clean
