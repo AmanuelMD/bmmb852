@@ -1,2 +1,22 @@
 .DS_Store
 
+# Raw sequencing files
+*.fastq
+*.fastq.gz
+
+# Alignment files
+*.bam
+*.bam.bai
+
+# SRA downloads
+SRR*/
+
+# BWA index files
+*.amb
+*.ann
+*.bwt
+*.pac
+*.sa
+
+# FastQC archives
+*_fastqc.zip
