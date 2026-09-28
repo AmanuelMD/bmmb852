@@ -59,6 +59,35 @@ The complete primary workflow can be run with:
 make
 ```
 
+## Directory Structure
+
+```text
+week05/
+├── Makefile
+├── README.md
+├── data/
+│   ├── comparison/
+│   │   └── coverage.txt
+│   └── reference/
+│       └── NC_012920.1.fa
+├── images/
+│   ├── SRR40580480_IGV.png
+│   └── coverage_comparison.png
+├── scripts/
+│   └── plot_coverage.py
+└── results/
+    ├── alignment/
+    │   ├── coverage.txt
+    │   └── mtND4_ND5_base_editing.flagstat.txt
+    ├── fastp/
+    │   ├── fastp_report.html
+    │   └── fastp_report.json
+    ├── fastqc_raw/
+    └── fastqc_trimmed/
+```
+
+Raw FASTQ files, BAM files, BAM indexes, BWA index files, and other large intermediate files are excluded from version control through `.gitignore`. They can be regenerated using the Makefile.
+
 The Makefile uses output files as dependencies, so completed steps are not unnecessarily repeated.
 
 ## Read Quality and Filtering
@@ -112,7 +141,7 @@ This illustrates the distinction between **depth of coverage** and **breadth of 
 
 The BAM file was visualized in IGV. The alignment shows a dense pileup of reads in the targeted region around positions 13,454–13,600.
 
-![IGV visualization of SRR40580480](SRR40580480_IGV.png)
+![IGV visualization of SRR40580480](images/SRR40580480_IGV.png)
 
 The IGV result agrees with the `samtools depth` analysis: the reads align very deeply to a small region while most of the mitochondrial genome has no coverage.
 
@@ -156,7 +185,7 @@ Because this was an exploratory comparison, SRR10069469 was aligned directly and
 
 ## Coverage Comparison
 
-![Comparison of mitochondrial genome coverage](coverage_comparison.png)
+![Comparison of mitochondrial genome coverage](images/coverage_comparison.png)
 
 The coverage profiles show a striking difference between the two datasets. SRR40580480 produces a narrow region of extremely high coverage, while SRR10069469 distributes reads across nearly the entire mitochondrial genome.
 
@@ -210,7 +239,7 @@ results/alignment/coverage.txt
 The coverage comparison figure was generated with:
 
 ```bash
-python plot_coverage.py
+python scripts/plot_coverage.py
 ```
 
 Generated FASTQ, BAM, BAM index, BWA index, and other intermediate files are excluded from version control where appropriate because they can be reproduced from the workflow.
