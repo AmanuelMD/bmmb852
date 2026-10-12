@@ -1,0 +1,16 @@
+# Generated sequencing and intermediate files
+data/
+results/
+
+# Keep final variant results for review
+!results/
+results/*
+!results/variants/
+results/variants/*
+!results/variants/SRR10069469.vcf.gz
+!results/variants/SRR10069469.vcf.gz.csi
+!results/variants/variant_stats.txt
+
+# Python cache
+__pycache__/
+*.pyc
