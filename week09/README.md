@@ -53,3 +53,24 @@ The merged VCF was visualized in IGV alongside the Sample1 BAM alignment. At mit
 **Figure 1.** IGV visualization of the mitochondrial region around position 8860 (NC_012920.1), showing the merged VCF genotype tracks for 10 samples and the Sample1 read alignments. The colored G bases indicate reads supporting the alternate allele.
 
 Although the average sequencing coverage is sufficient for exploratory variant calling, individual variants require additional quality assessment. Also, reference genotypes introduced during VCF merging should not be treated as independently confirmed calls.
+
+## Project structure
+
+```text
+week09/
+├── Makefile                  # Automates the workflow
+├── README.md                 # Documentation and findings
+├── design.csv                # Metadata for 10 samples
+├── data/
+│   ├── raw/                  # Downloaded sequencing reads
+│   └── reference/            # Mitochondrial reference genome
+├── results/
+│   ├── trimmed/              # Quality-filtered reads
+│   ├── fastp/                # Quality-control reports
+│   ├── alignment/            # BAM files and indexes
+│   └── variants/             # Individual and merged VCF files
+└── figures/
+    └── igv_atp6_8860.png     # IGV visualization
+```
+
+Raw sequencing data and intermediate files are generated locally and do not need to be uploaded to GitHub.
