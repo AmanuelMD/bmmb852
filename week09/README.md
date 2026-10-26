@@ -41,3 +41,15 @@ The 10-sample analysis produced **174 VCF records**. These records are not neces
 ## Reproducibility
 
 The Makefile uses the included mitochondrial reference genome, and the design file determines which samples are processed. No files from previous assignment weeks are required.
+
+## Coverage and IGV visualization
+
+All 10 samples had more than 98% mitochondrial genome coverage, with mean sequencing depths ranging from 20.17× to 23.98×. Sample1 covered 99.99% of the 16,569-bp reference genome, with an average depth of 23.98×.
+
+The merged VCF was visualized in IGV alongside the Sample1 BAM alignment. At mitochondrial position 8860, an A-to-G substitution was observed in the MT-ATP6 gene. Multiple aligned reads support the alternate G allele, and the variant appears in the VCF genotype tracks for all 10 samples.
+
+![IGV visualization of the mitochondrial variant at position 8860](figures/igv_atp6_8860.png)
+
+**Figure 1.** IGV visualization of the mitochondrial region around position 8860 (NC_012920.1), showing the merged VCF genotype tracks for 10 samples and the Sample1 read alignments. The colored G bases indicate reads supporting the alternate allele.
+
+Although the average sequencing coverage is sufficient for exploratory variant calling, individual variants require additional quality assessment. Also, reference genotypes introduced during VCF merging should not be treated as independently confirmed calls.
