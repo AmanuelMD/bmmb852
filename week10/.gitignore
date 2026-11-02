@@ -1,0 +1,8 @@
+# Downloaded sequencing data and reference files
+data/
+
+# Generated analysis outputs
+results/
+
+# macOS files
+.DS_Store
