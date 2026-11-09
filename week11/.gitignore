@@ -1,0 +1,13 @@
+# Downloaded sequencing data
+fastq/
+fasta/
+gtf/
+rnaseq-tutorial-2026.tar.gz
+
+# Generated analysis files
+bam/
+bw/
+counts/
+
+# macOS files
+.DS_Store
