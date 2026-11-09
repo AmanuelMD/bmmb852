@@ -14,3 +14,4 @@ This repository contains my assignments for BMMB 852.
 - [Week 08](https://github.com/AmanuelMD/bmmb852/tree/main/week08)
 - [Week 09](https://github.com/AmanuelMD/bmmb852/tree/main/week09)
 - [Week 10](https://github.com/AmanuelMD/bmmb852/tree/main/week10)
+- [Week 11](https://github.com/AmanuelMD/bmmb852/tree/main/week11)
