@@ -41,7 +41,7 @@ The three replicates within each group show similar coverage patterns. Most prom
 
 ### 3. Identify a gene that is not expressed in any sample.
 
-LINC01422 showed very low coverage across all six samples. It is a candidate for a gene with little or no detectable expression, although a few small coverage peaks were visible.
+U2 (ENSG00000277248.1), located at chr22:10,736,171–10,736,283, showed no detectable coverage in IGV and zero assigned reads in all six samples.
 
 ### 4. Identify a gene strongly expressed in all samples. What is its coverage?
 
@@ -89,8 +89,8 @@ RNA-seq coverage visualization revealed differences in gene expression between H
 ### Figure 1. Genome-wide HBR vs. UHR expression
 ![Genome-wide expression](figures/week11_genome_wide_expression.png)
 
-### Figure 2. Low expression of LINC01422
-![LINC01422](figures/week11_low_expression_LINC01422.png)
+### Figure 2. No detectable expression of U2
+![U2](figures/week11_U2_no_expression.png)
 
 ### Figure 3. HPS4 expression in all six samples
 ![HPS4](figures/week11_HPS4_expression.png)
