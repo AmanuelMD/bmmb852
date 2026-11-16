@@ -111,3 +111,11 @@ The scripts were tested using the six Salmon quantification files. The resulting
 - `src/combine_transcripts_as_genes.r`: Generates the gene-level count matrix.
 - `results/transcript_counts.csv`: Final transcript count matrix.
 - `results/transcripts_as_genes.csv`: Final gene count matrix.
+
+## IGV Visualization
+
+The six RNA-seq coverage tracks and chromosome 22 GTF annotation were visualized in IGV at the SEZ6L gene region (chr22:26,167,474–26,385,597).
+
+The HBR samples showed substantially higher coverage than the UHR samples, consistent with the Salmon-derived gene counts.
+
+![SEZ6L coverage in IGV](SEZ6L_IGV.png)
