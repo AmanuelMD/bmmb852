@@ -42,11 +42,11 @@ if (anyNA(idx)) {
 
 mapped <- cbind(
   annotation[idx, c("gene_id", "gene_name")],
-  counts[-1]
+  counts[c("HBR_1", "HBR_2", "HBR_3", "UHR_1", "UHR_2", "UHR_3")]
 )
 
 # Sum counts for transcripts belonging to the same gene.
-sample_columns <- names(counts)[-1]
+sample_columns <- c("HBR_1", "HBR_2", "HBR_3", "UHR_1", "UHR_2", "UHR_3")
 
 gene_counts <- aggregate(
   mapped[sample_columns],

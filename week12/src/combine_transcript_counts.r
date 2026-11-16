@@ -30,6 +30,46 @@ for (sample in SAMPLES) {
   cat("# Processed:", sample, "\n")
 }
 
+
+# Read transcript-to-gene annotations from the GTF.
+gtf <- read.delim(
+  "../week11/gtf/chr22.gtf",
+  header = FALSE,
+  comment.char = "#",
+  quote = "",
+  stringsAsFactors = FALSE
+)
+
+gtf <- gtf[gtf[[3]] == "transcript", ]
+
+get_attribute <- function(x, key) {
+  pattern <- paste0('(?:^|;[[:space:]]*)', key, ' "([^"]+)"')
+  matches <- regmatches(x, regexec(pattern, x, perl = TRUE))
+  vapply(matches, function(z) {
+    if (length(z) >= 2) z[2] else NA_character_
+  }, character(1))
+}
+
+annotation <- data.frame(
+  transcript_id = get_attribute(gtf[[9]], "transcript_id"),
+  gene_id = get_attribute(gtf[[9]], "gene_id"),
+  gene_name = get_attribute(gtf[[9]], "gene_name")
+)
+
+annotation <- annotation[!duplicated(annotation$transcript_id), ]
+
+idx <- match(counts$transcript_id, annotation$transcript_id)
+
+if (anyNA(idx)) {
+  stop("Some transcripts have no GTF annotation")
+}
+
+counts <- cbind(
+  counts["transcript_id"],
+  annotation[idx, c("gene_id", "gene_name")],
+  counts[-1]
+)
+
 write.csv(counts, OUTPUT, row.names = FALSE)
 
 cat("# Transcripts:", nrow(counts), "\n")
