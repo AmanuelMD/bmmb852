@@ -1,0 +1,10 @@
+# Salmon intermediate files
+salmon_index/
+counts/
+
+# Reference FASTA symlink
+fasta/
+
+# R temporary files
+.Rhistory
+.RData
